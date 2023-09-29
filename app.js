@@ -25,10 +25,10 @@ app.engine(
   )
 app.set('view engine', '.hbs');
 
+// Routes
+app.use('/' , require('./routes/index.js'))
 
 const PORT = process.env.PORT || 3000
-
-
 
 app.listen(
     PORT,
