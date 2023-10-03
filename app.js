@@ -26,10 +26,18 @@ app.use( express.json() )
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
+
+// Handlebars Helpers
+const { formatDate, } = require('./helpers/hbs')
+//const moment = require('moment')
+
 //Handlebars
 app.engine(
     '.hbs',
     exphbs.engine({
+      helpers: {
+        formatDate: formatDate
+      },
       defaultLayout: 'main',
       extname: '.hbs',
     })
