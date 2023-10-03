@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose')
 
 const StorySchema = new mongoose.Schema({
-    tilte: {
+    title: {
         type: String,
         required: true,
         trim: true
@@ -10,7 +10,7 @@ const StorySchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Status: {
+    status: {
         type: String,
         default: 'public',
         enum: ['public', 'private']
